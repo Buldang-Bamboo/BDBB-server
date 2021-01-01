@@ -47,7 +47,7 @@ export async function generateThumbnail(post: Post): Promise<void> {
     ctx.fillStyle = color.primaryDark
     ctx.fillText(`#${number}번_제보`, 1160, 50)
     ctx.fillText(`#${post.tag}`, 1160, 80)
-    ctx.fillText('http://bdhs.bulind.space', 1160, 590)
+    ctx.fillText('https://bdhs.bulind.space', 1160, 590)
 
     const title = post.title
 
