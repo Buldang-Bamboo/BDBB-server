@@ -11,8 +11,8 @@ router.get(
       title: 'BDBB',
       description: '천안불당고등학교 대나무숲',
       pubDate: new Date(),
-      feed_url: 'http://i.bulind.space/rss',
-      site_url: 'http://bulind.space'
+      feed_url: 'https://i.bulind.space/rss',
+      site_url: 'https://bulind.space'
     })
 
     const posts = await Post.getList()
@@ -30,12 +30,12 @@ router.get(
       const publishedDate = new Date(post.createdAt)
       feed.item({
         title: post.title ?? '',
-        url: `http://bulind.space/post/${post.number as number}`,
+        url: `https://bulind.space/post/${post.number as number}`,
         description: post.tag,
         date: publishedDate,
         guid: post.id.toString(),
         custom_elements: [
-          { link: `http://bulind.space/post/${post.number as number}` },
+          { link: `https://bulind.space/post/${post.number as number}` },
           {
             'content:encoded': `
             <!doctype html>
@@ -55,7 +55,7 @@ router.get(
                         : ''
                     }
                     <h3 class="op-kicker">${post.tag}</h3>
-                    <figure><img src="http://i.bulind.space/thumbnail/${
+                    <figure><img src="https://i.bulind.space/thumbnail/${
                       post.number as number
                     }.jpeg" /></figure>
                     <time class="op-published" datetime=${publishedDate.toISOString()}>
